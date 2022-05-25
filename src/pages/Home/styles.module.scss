@@ -1,0 +1,30 @@
+.container {
+  display: grid;
+  grid-template-areas: 'search' 'content';
+}
+
+.content {
+  grid-area: content;
+  display: grid;
+  grid-template-areas: 'profile repos';
+  grid-template-columns: minmax(250px, 300px) 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.repos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1rem;
+  padding: 2rem 0;
+}
