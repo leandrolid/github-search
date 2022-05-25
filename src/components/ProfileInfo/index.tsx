@@ -57,18 +57,22 @@ export const ProfileInfo = ({
       <section className={styles.details}>
         <div>
           <img src={companyIcon} alt="Company" />
-          {company}
+          {company || '...'}
           </div>
         <div>
           <img src={locationIcon} alt="Location" />
-          {location}
+          {location || '...'}
           </div>
-        <div>
-          <img src={blogIcon} alt="Blog/Link" />
-          <a href={`https://${blog}`} target="_blank" rel="noopener noreferrer">
-            {blog}
-          </a>
-          </div>
+        {
+          blog && (
+            <div>
+              <img src={blogIcon} alt="Blog/Link" />
+              <a href={`https://${blog}`} target="_blank" rel="noopener noreferrer">
+                {blog}
+              </a>
+            </div>
+          )
+        }
       </section>
     </aside>
   );
