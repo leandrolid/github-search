@@ -28,17 +28,18 @@ const getReposByUsername = async (username: string) => {
     const { data } = await github.get<Array<IRepoResponse>>(`/${username}/repos`);
 
     const repoList = data
-    .filter(({description}) => description?.length > 180)
+    // .filter(({description}) => description)
     .map(({name, description, html_url, language}) => ({
       name,
-      description: `${description.substring(0, 180)}...`,
+      description: `${description ? description.substring(0, 180) : ''}...`,
       url: html_url,
       language
     }));
 
     return repoList;
   } catch (error) {
-    throw new Error('Algo deu errado com a pesquisa');
+    console.error(error);
+    return [];
   }
 
 
