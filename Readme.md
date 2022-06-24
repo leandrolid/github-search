@@ -33,7 +33,7 @@ O app foi feito usando React com Vite, e também com uso do TypeScript.
 <br>
 
 <p align="center">
-<img src=".github/github-search.png" src="Imagem do aplicativo de feedback" />
+<img src=".github/github-search.png" alt="Imagem do aplicativo" />
 </p>
 
 ## Tecnologias
